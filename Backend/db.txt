@@ -1,2 +1,0 @@
-mongodb+srv://shaili2002:<9flnzUqHeMLlEmHk>@cluster0.6sic8pb.mongodb.net/?appName=Cluster0
-npm install mongodb
