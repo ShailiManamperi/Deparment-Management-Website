@@ -50,7 +50,7 @@ async function loadQuote(id) {
     if (!data.success) return;
 
     const q = data.quote;
-    document.getElementById("formRef").value = q.quote_ref || "Quote Ref";
+    document.getElementById("formRef").textContent =q.quote_ref || "Quote Ref";
     document.getElementById("formProject").value = q.project_name || "";
     document.getElementById("formClient").value = q.client_name || "";
     document.getElementById("formSC").value = q.sale_center || "";
@@ -61,6 +61,12 @@ async function loadQuote(id) {
     document.getElementById("formScope").value = q.scope || "";
     document.getElementById("formStatus").value = q.status || "";
     document.getElementById("formRemark").value = q.remark || "";
+
+    const refEl = document.getElementById("formRef");
+
+    if (refEl) {
+        refEl.textContent = q.quote_ref || "Quote Ref";
+    }
 }
 
 
