@@ -10,12 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelectorAll(".needs-validation")[1]
         .addEventListener("submit", async (e) => {
             e.preventDefault();
-            const refEl = document.getElementById("formRef");
-
-            if (refEl) {
-                refEl.textContent = q.quote_ref || "Quote Ref";
-            }
-
+            
             const payload = {
                 quote_id: id,
                 quote_ref_new: document.getElementById("qutRef").value,
