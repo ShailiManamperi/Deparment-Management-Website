@@ -13,7 +13,7 @@ window.addEventListener("load", () => {
 // =========================
 async function fetchItems() {
   try {
-    const res = await fetch("https://department-management-website-backe.vercel.app/api/items");
+    const res = await fetch("https://department-management-website-backe.vercel.app/api/item");
     const data = await res.json();
 
     if (data.success) {
