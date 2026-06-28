@@ -50,7 +50,7 @@ async function loadQuote(id) {
     if (!data.success) return;
 
     const q = data.quote;
-
+    document.getElementById("formRef").value = q.quote_ref || "Quote Ref";
     document.getElementById("formProject").value = q.project_name || "";
     document.getElementById("formClient").value = q.client_name || "";
     document.getElementById("formSC").value = q.sale_center || "";
