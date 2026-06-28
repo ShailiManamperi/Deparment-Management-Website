@@ -1,23 +1,19 @@
 window.addEventListener("load", () => {
   const form = document.querySelector(".needs-validation");
-console.log("quotation.js loaded");
-
-  if (!form) {
-    console.error("Form not found!");
-    return;
-  }
 
   form.addEventListener("submit", async (event) => {
-    event.preventDefault(); // 🚫 STOP REFRESH
+    event.preventDefault();
     event.stopImmediatePropagation();
-
-    console.log("Form submit captured"); // DEBUG
 
     // Bootstrap validation
     if (!form.checkValidity()) {
       form.classList.add("was-validated");
       return;
     }
+
+    const btn = form.querySelector("button[type='submit']");
+    btn.disabled = true;
+    btn.innerHTML = "Saving...";
 
     const payload = {
       quote_ref: document.getElementById("formRef").value,
@@ -28,12 +24,10 @@ console.log("quotation.js loaded");
       sales_person: document.getElementById("formSP").value,
       value_amount: document.getElementById("formValue").value,
       gp_amount: document.getElementById("formGp").value,
-      status: document.querySelector("select[id='formStatus']")?.value,
-      revision_count: document.getElementById("formCount")?.value || 0,
+      status: document.getElementById("formStatus").value,
+      revision_count: document.getElementById("formRevision")?.value || 0,
       remark: document.getElementById("formRemark").value
     };
-
-    console.log("Payload:", payload);
 
     try {
       const res = await fetch("https://department-management-website-backe.vercel.app/api/quotation", {
@@ -45,19 +39,23 @@ console.log("quotation.js loaded");
       });
 
       const data = await res.json();
-      console.log("Response:", data);
 
       if (data.success) {
-        alert("Saved ✔ ID: " + data.id);
         form.reset();
         form.classList.remove("was-validated");
+
+        alert("✅ Saved successfully! ID: " + data.id);
       } else {
-        alert("Save failed ❌");
+        alert("❌ Failed to save");
+        console.log(data);
       }
 
     } catch (err) {
-      console.error(err);
+      console.error("Error:", err);
       alert("Server error");
     }
+
+    btn.disabled = false;
+    btn.innerHTML = `<i class="bi bi-send"></i> Submit Form`;
   });
 });
