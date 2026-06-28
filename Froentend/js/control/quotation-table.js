@@ -1,4 +1,5 @@
 async function loadQuotationsTable() {
+    console.log("load quoations");
   try {
     const res = await fetch("https://department-management-website-backe.vercel.app/api/quotation");
     const result = await res.json();
