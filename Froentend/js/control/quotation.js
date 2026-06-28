@@ -24,9 +24,10 @@ window.addEventListener("load", () => {
       sales_person: document.getElementById("formSP").value,
       value_amount: document.getElementById("formValue").value,
       gp_amount: document.getElementById("formGp").value,
+      profit: document.getElementById("formProfit").value,
       status: document.getElementById("formStatus").value,
       date: document.getElementById("formDate").value,
-      revision_count: document.getElementById("formRevision")?.value || 0,
+      revision_count: 0,
       remark: document.getElementById("formRemark").value
     };
 
