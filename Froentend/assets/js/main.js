@@ -152,7 +152,7 @@
       var sidebarNameEl = document.querySelector(".sidebar-user strong");
       var sidebarWorkspaceEl = document.querySelector(".sidebar-user small");
       var sidebarAvatar = document.querySelector(".sidebar-user .avatar-img");
-      var profileNameEls = document.querySelectorAll(".profile-name");
+      // var profileNameEls = document.querySelectorAll(".profile-name");
       var profileAvatarEls = document.querySelectorAll(".profile-button .avatar-img, .profile-button img");
 
       if (sidebarNameEl) sidebarNameEl.textContent = user.name;

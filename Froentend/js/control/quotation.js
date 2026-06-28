@@ -25,6 +25,7 @@ window.addEventListener("load", () => {
       value_amount: document.getElementById("formValue").value,
       gp_amount: document.getElementById("formGp").value,
       status: document.getElementById("formStatus").value,
+      date: document.getElementById("formDate").value,
       revision_count: document.getElementById("formRevision")?.value || 0,
       remark: document.getElementById("formRemark").value
     };

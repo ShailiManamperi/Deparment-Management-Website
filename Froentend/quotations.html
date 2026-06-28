@@ -37,56 +37,29 @@
         </a>
         <a class="nav-link active" href="quotations.html" aria-current="page">
           <span class="nav-icon"><i class="bi bi-table" aria-hidden="true"></i></span>
-          <span class="nav-text">Tables</span>
+          <span class="nav-text">Quotations</span>
         </a>
-        <a class="nav-link" href="users.html">
-          <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
-          <span class="nav-text">Users</span>
+        <a class="nav-link" href="forms.html">
+          <span class="nav-icon"><i class="bi bi-ui-checks-grid" aria-hidden="true"></i></span>
+          <span class="nav-text">Add Items</span>
         </a>
-        <a class="nav-link" href="add-user.html">
-          <span class="nav-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
-          <span class="nav-text">Add User</span>
+        <a class="nav-link" href="components.html">
+          <span class="nav-icon"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i></span>
+          <span class="nav-text">All items</span>
         </a>
-        <a class="nav-link" href="profile.html">
-          <span class="nav-icon"><i class="bi bi-person-badge" aria-hidden="true"></i></span>
-          <span class="nav-text">Profile</span>
+        <a class="nav-link" href="modals.html">
+          <span class="nav-icon"><i class="bi bi-window-stack" aria-hidden="true"></i></span>
+          <span class="nav-text">Reports</span>
         </a>
         <a class="nav-link" href="charts.html">
           <span class="nav-icon"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span>
           <span class="nav-text">Charts</span>
         </a>
-        
-        <a class="nav-link" href="forms.html">
-          <span class="nav-icon"><i class="bi bi-ui-checks-grid" aria-hidden="true"></i></span>
-          <span class="nav-text">Forms</span>
-        </a>
-        <a class="nav-link" href="components.html">
-          <span class="nav-icon"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i></span>
-          <span class="nav-text">Components</span>
-        </a>
-        <a class="nav-link" href="alerts.html">
-          <span class="nav-icon"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i></span>
-          <span class="nav-text">Alerts</span>
-        </a>
-        <a class="nav-link" href="modals.html">
-          <span class="nav-icon"><i class="bi bi-window-stack" aria-hidden="true"></i></span>
-          <span class="nav-text">Modals</span>
-        </a>
-        <a class="nav-link" href="settings.html">
-          <span class="nav-icon"><i class="bi bi-gear" aria-hidden="true"></i></span>
-          <span class="nav-text">Settings</span>
-        </a>
-        <a class="nav-link" href="blank.html">
-          <span class="nav-icon"><i class="bi bi-file-earmark" aria-hidden="true"></i></span>
-          <span class="nav-text">Blank Page</span>
+        <a class="nav-link" href="profile.html">
+          <span class="nav-icon"><i class="bi bi-person-badge" aria-hidden="true"></i></span>
+          <span class="nav-text">Profile</span>
         </a>
       </nav>
-
-      <div class="sidebar-user">
-        <img class="avatar-img avatar-md sidebar-user-avatar" src="assets/images/avatar/avatar.jpg" alt="Admin Hasan">
-        <strong>Admin Hasan</strong>
-        <small>Active Workspace</small>
-      </div>
 
       <div class="sidebar-footer">
         <span class="status-dot"></span>
@@ -136,7 +109,7 @@
             <div class="dropdown">
               <button class="profile-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <img class="avatar-img avatar-sm" src="assets/images/avatar/avatar.jpg" alt="Admin Hasan">
-                <span class="profile-name d-none d-sm-inline">Admin Hasan</span>
+                 <span class="profile-name d-none d-sm-inline" id="navProfileName">Admin</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="profile.html">Profile</a></li>
@@ -156,7 +129,7 @@
               <span class="page-icon"><i class="bi bi-table" aria-hidden="true"></i></span>
               <div>
                 <p class="eyebrow mb-1">Data</p>
-                <h1 class="h3 mb-1">Qptation Tables</h1>
+                <h1 class="h3 mb-1">Quotation Tables</h1>
                 <!-- <p class="text-muted mb-0">Use responsive, searchable tables for operational records.</p> -->
               </div>
             </div>
@@ -165,7 +138,7 @@
 
           <section class="panel">
             <div class="panel-header"><div><h2 class="h5 mb-1 section-title"><i class="bi bi-table" aria-hidden="true"></i><span>Quotation Table</span></h2><p class="text-muted mb-0">Searchable responsive table for quotess and project data.</p></div><input class="form-control form-control-sm table-search" type="search" placeholder="Search Quote" data-table-search="quotesTable" aria-label="Search quotation"></div>
-            <div class="table-responsive"><table class="table align-middle mb-0" id="quotesTable" data-searchable-table><thead><tr><th>No</th><th>Ref</th><th>Project</th><th>Status</th><th>Scope</th><th>Amount</th><th>GP</th><th class="text-end">Action</th></tr></thead><tbody>
+            <div class="table-responsive"><table class="table align-middle mb-0" id="quotesTable" data-searchable-table><thead><tr><th>No</th><th>Ref</th><th>Date</th><th>Project</th><th>Status</th><th>Scope</th><th>Amount</th><th>GP</th><th class="text-end">Action</th></tr></thead><tbody>
               </tbody></table></div>
           </section>
         </div>
@@ -173,9 +146,8 @@
 
       <footer class="admin-footer">
         <div class="container-fluid px-3 px-lg-4">
-          <span>Copyright 2026 adminHMD. <br> Developed by <a target="_blank" class="fw-bold text-success" href="https://github.com/HasanMahmudDev">Md. Hasan Mahmud</a> • Distributed by <a target="_blank" class="fw-bold text-success" href="https://themewagon.com">ThemeWagon</a> </span>
-          <span>Professional dashboard template.</span>
-          <span>Responsive table examples.</span>
+          <span>Copyright 2026 LGT-Rotax.  </span> 
+          <span>Developed by <a target="_blank" class="fw-bold text-success" href="https://github.com/ShailiManamperi">M.G.Shaili Manamperi</a> •</span>
         </div>
       </footer>
     </div>
@@ -184,5 +156,7 @@
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="js/control/quotation-table.js"></script>
+  <script src="js/control/profile.js"></script>
+  <script src="js/control/user-global.js"></script>
 </body>
 </html>
