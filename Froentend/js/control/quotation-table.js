@@ -12,7 +12,7 @@ async function loadQuotationsTable() {
       return;
     }
 
-    const tbody = document.querySelector("#ordersTable tbody");
+    const tbody = document.querySelector("#quotesTable tbody");
     tbody.innerHTML = "";
 
     result.data.forEach((item, index) => {
