@@ -1,9 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form");
+window.addEventListener("load", () => {
+  const form = document.querySelector(".needs-validation");
+console.log("quotation.js loaded");
+
+  if (!form) {
+    console.error("Form not found!");
+    return;
+  }
 
   form.addEventListener("submit", async (event) => {
-    event.preventDefault(); // 🚫 STOP PAGE RELOAD
-    event.stopPropagation();
+    event.preventDefault(); // 🚫 STOP REFRESH
+    event.stopImmediatePropagation();
+
+    console.log("Form submit captured"); // DEBUG
 
     // Bootstrap validation
     if (!form.checkValidity()) {
@@ -20,46 +28,36 @@ document.addEventListener("DOMContentLoaded", () => {
       sales_person: document.getElementById("formSP").value,
       value_amount: document.getElementById("formValue").value,
       gp_amount: document.getElementById("formGp").value,
-      status: document.querySelectorAll("select")[2].value, // safe fallback fix
+      status: document.querySelector("select[id='formStatus']")?.value,
       revision_count: document.getElementById("formCount")?.value || 0,
       remark: document.getElementById("formRemark").value
     };
 
+    console.log("Payload:", payload);
+
     try {
-      const btn = form.querySelector("button[type='submit']");
-      btn.disabled = true;
-      btn.innerHTML = "Saving...";
-      alert("✅ Quotation saved! ID: ");
-      console.log(payload);
+      const res = await fetch("https://department-management-website-backe.vercel.app/api/quotation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
 
-    //   const res = await fetch("https://YOUR-VERCEL-APP.vercel.app/api/quotation", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(payload)
-    //   });
+      const data = await res.json();
+      console.log("Response:", data);
 
-    //   const data = await res.json();
+      if (data.success) {
+        alert("Saved ✔ ID: " + data.id);
+        form.reset();
+        form.classList.remove("was-validated");
+      } else {
+        alert("Save failed ❌");
+      }
 
-    //   if (data.success) {
-    //     // success UI
-    //     form.reset();
-    //     form.classList.remove("was-validated");
-
-    //     alert("✅ Quotation saved! ID: " + data.id);
-    //   } else {
-    //     alert("❌ Failed to save");
-    //     console.log(data);
-    //   }
-
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error(err);
       alert("Server error");
-    } finally {
-      const btn = form.querySelector("button[type='submit']");
-      btn.disabled = false;
-      btn.innerHTML = `<i class="bi bi-send"></i> Submit Form`;
     }
   });
 });
