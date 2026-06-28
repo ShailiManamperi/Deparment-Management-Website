@@ -3,6 +3,7 @@ async function loadQuotationsTable() {
   try {
     const res = await fetch("https://department-management-website-backe.vercel.app/api/quotation");
     const result = await res.json();
+    console.log(result);
 
     if (!result.success) {
       console.log("Failed to load quotations");
