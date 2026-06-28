@@ -27,21 +27,21 @@ document.addEventListener("DOMContentLoaded", async () => {
             };
 
             console.log(payload);
-            // const res = await fetch(
-            //     "https://department-management-website-backe.vercel.app/api/quotationdetails",
-            //     {
-            //         method: "POST",
-            //         headers: { "Content-Type": "application/json" },
-            //         body: JSON.stringify(payload)
-            //     }
-            // );
+            const res = await fetch(
+                "https://department-management-website-backe.vercel.app/api/quotationdetails",
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                }
+            );
 
-            // const result = await res.json();
+            const result = await res.json();
 
-            // if (result.success) {
-            //     await loadRevisions(id);
-            //     alert("Revision added");
-            // }
+            if (result.success) {
+                await loadRevisions(id);
+                alert("Revision added");
+            }
         });
 });
 
