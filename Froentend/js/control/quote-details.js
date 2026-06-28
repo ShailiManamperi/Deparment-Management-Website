@@ -34,8 +34,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             const result = await res.json();
 
             if (result.success) {
-                await loadRevisions(id);
-                alert("Revision added");
+                 await loadQuote(id);
+                 await loadRevisions(id);
+
+                // Optional: clear revision form
+                document.getElementById("qutRef").value = "";
+                document.getElementById("Value").value = "";
+                document.getElementById("date").value = "";
+
+                alert("Revision added successfully");
             }
         });
 });
