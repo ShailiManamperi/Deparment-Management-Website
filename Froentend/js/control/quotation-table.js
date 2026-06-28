@@ -38,7 +38,7 @@ function renderTable(data) {
       <tr>
         <td>${index + 1}</td>
         <td>${item.quote_ref}</td>
-        <td>${item.quotation_date}</td>
+        <td>${item.quotation_date ? item.quotation_date.split("T")[0] : "-"}</td>
         <td>${item.project_name}</td>
         <td><span class="badge ${badgeClass}">${item.status}</span></td>
         <td>${item.scope}</td>
