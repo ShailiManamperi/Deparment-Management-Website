@@ -44,7 +44,7 @@ function renderTable(data) {
         <td>${item.scope}</td>
         <td>${item.value_amount}</td>
         <td>${item.gp_amount}</td>
-        <td><button class="btn btn-sm btn-light" onclick="viewQuote(${index})">View</button></td>
+        <td><button class="btn btn-sm btn-light" onclick="viewQuote(${item.id})">View</button></td>
       </tr>
     `;
   });
