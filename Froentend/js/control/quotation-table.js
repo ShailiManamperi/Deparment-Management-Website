@@ -44,12 +44,16 @@ function renderTable(data) {
         <td>${item.scope}</td>
         <td>${item.value_amount}</td>
         <td>${item.gp_amount}</td>
-        <td><button class="btn btn-sm btn-light">View</button></td>
+        <td><button class="btn btn-sm btn-light" onclick="viewQuote(${index})">View</button></td>
       </tr>
     `;
   });
 }
 
+function viewQuote(id) {
+    localStorage.setItem("selected_quote_id", id);
+    window.location.href = "viewquote.html";
+}
 function setupSearch() {
   const searchInput = document.querySelector(".table-search");
 
