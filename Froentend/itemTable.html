@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="adminHMD professional admin dashboard template">
-  <title>Add Items</title>
+  <title>Item table</title>
   <link rel="icon" href="assets/images/favicon/logo.jpg" type="image/png">
 
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -40,11 +40,11 @@
           <span class="nav-icon"><i class="bi bi-table" aria-hidden="true"></i></span>
           <span class="nav-text">Quotations</span>
         </a>
-        <a class="nav-link active" href="add item.html" aria-current="page">
+        <a class="nav-link " href="add item.html">
           <span class="nav-icon"><i class="bi bi-ui-checks-grid" aria-hidden="true"></i></span>
           <span class="nav-text">Add Items</span>
         </a>
-        <a class="nav-link" href="itemTable.html">
+        <a class="nav-link active" href="components.html" aria-current="page">
           <span class="nav-icon"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i></span>
           <span class="nav-text">All items</span>
         </a>
@@ -127,33 +127,41 @@
         <div class="container-fluid px-3 px-lg-4 py-4">
           <div class="page-heading">
             <div class="page-heading-copy">
-              <span class="page-icon"><i class="bi bi-ui-checks-grid" aria-hidden="true"></i></span>
+              <span class="page-icon"><i class="bi bi-table" aria-hidden="true"></i></span>
               <div>
-                <h1 class="h3 mb-1">Add Item</h1>
+                <p class="eyebrow mb-1">Data</p>
+                <h1 class="h3 mb-1">Item Tables</h1>
+                <!-- <p class="text-muted mb-0">Use responsive, searchable tables for operational records.</p> -->
               </div>
             </div>
             
           </div>
 
-          <section class="row g-3">
-            <div class="col-12">
-              <form class="panel needs-validation" novalidate>
-                <div class="panel-header"><div><h2 class="h5 mb-1 section-title"><i class="bi bi-ui-checks-grid" aria-hidden="true"></i><span>Item Add Form</span></h2></div></div>
-                <div class="row g-3">
-                  <div class="col-md-4"><label class="form-label" for="formType">Type</label><select class="form-select" id="formType" required><option value="">Choose type</option><option>Batten Light</option><option>DownLight</option><option>Panel Light</option><option>Bulk Heads</option><option>Flood Light</option><option>Street Light</option><option>Hibays</option><option>Tube Light</option><option>Sensor Light</option></select><div class="invalid-feedback">Choose a type.</div></div>
-                  <div class="col-md-4"><label class="form-label" for="formName">Name</label><input class="form-control" id="formName" required><div class="invalid-feedback">Name is required.</div></div>
-                  <div class="col-md-4"><label class="form-label" for="formBrand">Brand</label><input class="form-control" id="formBrand" required><div class="invalid-feedback">Brand is required.</div></div>
-                  <div class="col-md-3"><label class="form-label" for="formWat">Wattage</label><input class="form-control" id="formWat" required><div class="invalid-feedback">Wattage is required.</div></div>
-                  <div class="col-md-3"><label class="form-label" for="formLumen">Lumen</label><input class="form-control" id="formLumen" required><div class="invalid-feedback">Lumen is required.</div></div>
-                  <div class="col-md-3"><label class="form-label" for="formIP">IP</label><input class="form-control" id="formIP" required><div class="invalid-feedback">Ip is required.</div></div>
-                  <div class="col-md-3"><label class="form-label" for="formCCT">CCT</label><input class="form-control" id="formCCT" required><div class="invalid-feedback">CCT is required.</div></div>
-                  <div class="col-md-4"><label class="form-label" for="formOther">Other</label><input class="form-control" id="formOther"><div class="invalid-feedback">Other is required.</div></div>
-                  <div class="col-md-4"><label class="form-label" for="formSupplier">Supplier</label><input class="form-control" id="formSupplier" required><div class="invalid-feedback">Supplier is required.</div></div>
-                  <div class="col-md-4"><label class="form-label" for="formBudget">Price</label><input class="form-control" id="formBudget" type="number" min="1" required><div class="invalid-feedback">Enter a valid price.</div></div>
+          <section class="panel">
+            <!-- <div class="panel-header"><input class="form-control form-control-sm table-search" type="search" placeholder="Search orders" data-table-search="itemsTable" aria-label="Search orders"></div> -->
+             <div class="panel-header d-flex gap-2 flex-wrap">
+                <div class="col-md-3">
+                  <!-- Search -->
+                  <input class="form-control form-control-sm" 
+                        type="search" 
+                        placeholder="Search items..." 
+                        id="searchInput">
                 </div>
-                <div class="d-flex justify-content-end mt-4"><button class="btn btn-primary" type="submit"><i class="bi bi-send" aria-hidden="true"></i> Add Item</button></div>
-              </form>
+                <div class="col-md-3">
+                   <!-- Type Filter -->
+                  <select class="form-select form-select-sm" id="typeFilter">
+                    <option value="">All Types</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <!-- Brand Filter -->
+                  <select class="form-select form-select-sm" id="brandFilter">
+                    <option value="">All Brands</option>
+                  </select>
+                </div>
             </div>
+            <div class="table-responsive"><table class="table align-middle mb-0" id="itemsTable" data-searchable-table><thead><tr><th>No</th><th>Type</th><th>Name</th><th>Brand</th><th>Supplier</th><th>Details</th><th>Price</th></tr></thead><tbody>
+            </tbody></table></div>
           </section>
         </div>
       </main>
@@ -170,6 +178,6 @@
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="js/control/user-global.js"></script>
-  <script src="js/control/item.js"></script>
+  <script src="js/control/itemtable.js"></script>
 </body>
 </html>
