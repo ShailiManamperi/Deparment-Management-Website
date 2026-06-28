@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
       value_amount: document.getElementById("formValue").value,
       gp_amount: document.getElementById("formGp").value,
       status: document.querySelectorAll("select")[2].value, // safe fallback fix
-      revision_count: document.getElementById("formRevision")?.value || 0,
-      remark: document.getElementById("formMessage").value
+      revision_count: document.getElementById("formCount")?.value || 0,
+      remark: document.getElementById("formRemark").value
     };
 
     try {
