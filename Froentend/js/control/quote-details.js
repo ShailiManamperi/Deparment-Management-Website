@@ -13,12 +13,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             const payload = {
                 quote_id: id,
-                quote_ref: document.getElementById("qutRef").value,
-                value_amount: document.getElementById("Value").value
+                quote_ref_new: document.getElementById("qutRef").value,
+                value_amount_new: document.getElementById("Value").value,
+                date_new: document.getElementById("date").value,
+                quote_ref: document.getElementById("formRef").value,
+                value_amount: document.getElementById("formValue").value,
+                date: document.getElementById("formDate").value,
             };
 
             const res = await fetch(
-                "https://department-management-website-backe.vercel.app/api/quotation",
+                "https://department-management-website-backe.vercel.app/api/quotationdetails",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
