@@ -7,21 +7,29 @@ $(document).ready(function(){
 	header_height 		 = $(".default-header").height(),
 	header_height_static = $(".site-header.static").outerHeight(),
 	fitscreen 			 = window_height - header_height;
+
+
 	$(".fullscreen").css("height", window_height)
     $(".fitscreen").css("height", fitscreen);
+
   //------- Active Nice Select --------//
+
     $('select').niceSelect();
+
+
     $('.navbar-nav li.dropdown').hover(function() {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
     }, function() {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
     });
+
     $('.img-pop-up').magnificPopup({
         type: 'image',
         gallery:{
         enabled:true
         }
     });
+
     // Search Toggle
     $("#search_input_box").hide();
     $("#search").on("click", function () {
@@ -31,10 +39,12 @@ $(document).ready(function(){
     $("#close_search").on("click", function () {
         $('#search_input_box').slideUp(500);
     });
+
     /*==========================
 		javaScript for sticky header
 		============================*/
 			$(".sticky-header").sticky();
+
     /*=================================
     Javascript for banner area carousel
     ==================================*/
@@ -47,6 +57,7 @@ $(document).ready(function(){
         navText:["<img src='img/banner/prev.png'>","<img src='img/banner/next.png'>"],
         dots:false
     });
+
     /*=================================
     Javascript for product area carousel
     ==================================*/
@@ -59,6 +70,7 @@ $(document).ready(function(){
         navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
         dots:false
     });
+
     /*=================================
     Javascript for single product area carousel
     ==================================*/
@@ -69,7 +81,8 @@ $(document).ready(function(){
       loop:true,
       nav:false,
       dots:true
-    });   
+    });
+    
     /*=================================
     Javascript for exclusive area carousel
     ==================================*/
@@ -82,6 +95,7 @@ $(document).ready(function(){
         navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
         dots:false
     });
+
     //--------- Accordion Icon Change ---------//
 
     $('.collapse').on('shown.bs.collapse', function(){
@@ -126,6 +140,9 @@ $(document).ready(function(){
         }
       }
     });
+
+
+
       // -------   Mail Send ajax
 
          $(document).ready(function() {
@@ -164,6 +181,9 @@ $(document).ready(function(){
     $(document).ready(function() {
         $('#mc_embed_signup').find('form').ajaxChimp();
     });   
+
+
+
      if(document.getElementById("js-countdown")){
 
         var countdown = new Date("October 31, 2025");
@@ -174,6 +194,7 @@ $(document).ready(function(){
             var minutes = Math.floor(milliseconds / 1000 / 60 % 60);
             var hours = Math.floor(milliseconds / (1000 * 60 * 60) % 24);
             var days = Math.floor(milliseconds / (1000 * 60 * 60 * 24));
+
         return {
             'total': milliseconds,
             'seconds': seconds,
@@ -182,34 +203,49 @@ $(document).ready(function(){
             'days': days
             };
         }
+
         function initClock(id, endtime) {
             var counter = document.getElementById(id);
             var daysItem = counter.querySelector('.js-countdown-days');
             var hoursItem = counter.querySelector('.js-countdown-hours');
             var minutesItem = counter.querySelector('.js-countdown-minutes');
             var secondsItem = counter.querySelector('.js-countdown-seconds');
+
         function updateClock() {
             var time = getRemainingTime(endtime);
+
             daysItem.innerHTML = time.days;
             hoursItem.innerHTML = ('0' + time.hours).slice(-2);
             minutesItem.innerHTML = ('0' + time.minutes).slice(-2);
             secondsItem.innerHTML = ('0' + time.seconds).slice(-2);
+
             if (time.total <= 0) {
               clearInterval(timeinterval);
             }
             }
+
             updateClock();
             var timeinterval = setInterval(updateClock, 1000);
         }
+
         initClock('js-countdown', countdown);
 
   };
+
+
+
       $('.quick-view-carousel-details').owlCarousel({
           loop: true,
           dots: true,
           items: 1,
       })
+
+
+
     //----- Active No ui slider --------//
+
+
+
     $(function(){
 
         if(document.getElementById("price-range")){
@@ -229,10 +265,13 @@ $(document).ready(function(){
                 'max': [ 10000 ]
             }
         });
+
+
         var nodes = [
             document.getElementById('lower-value'), // 0
             document.getElementById('upper-value')  // 1
         ];
+
         // Display the slider value and how far the handle moved
         // from the left edge of the slider.
         nonLinearSlider.noUiSlider.on('update', function ( values, handle, unencoded, isTap, positions ) {
@@ -240,7 +279,10 @@ $(document).ready(function(){
         });
 
         }
-    });   
+
+    });
+
+    
     //-------- Have Cupon Button Text Toggle Change -------//
 
     $('.have-btn').on('click', function(e){
@@ -256,8 +298,16 @@ $(document).ready(function(){
         $('.load-product').fadeIn('slow');
         $(this).fadeOut();
     });
+    
+
+
+
 
   //------- Start Quantity Increase & Decrease Value --------//
+
+
+
+
     var value,
         quantity = document.getElementsByClassName('quantity-container');
 
@@ -293,7 +343,9 @@ $(document).ready(function(){
 
         quantityAmount.value = value;
     }
+
   init();
+
 //------- End Quantity Increase & Decrease Value --------//
 
   /*----------------------------------------------------*/
@@ -506,4 +558,8 @@ $(document).ready(function(){
           ]
         });
       }
+
+
+  
+
  });
