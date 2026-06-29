@@ -177,7 +177,7 @@ This project is developed for educational and business management purposes.
 
 ## 👨‍💻 Developer
 
-**Vishwa Shaili Manamperi**
+**Shaili Manamperi**
 
 🌐 Live Project:  
 https://deparmentmanagementwebsite.shailimanamperi2002.workers.dev/
