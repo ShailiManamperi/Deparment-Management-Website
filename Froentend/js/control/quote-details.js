@@ -62,6 +62,7 @@ async function loadQuote(id) {
     if (!data.success) return;
 
     const q = data.quote;
+    console.log(q); 
     document.getElementById("formRef").textContent =q.quote_ref || "Quote Ref";
     document.getElementById("formProject").value = q.project_name || "";
     document.getElementById("formClient").value = q.client_name || "";
