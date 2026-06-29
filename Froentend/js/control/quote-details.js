@@ -69,7 +69,7 @@ async function loadQuote(id) {
     document.getElementById("formSC").value = q.sale_center || "";
     document.getElementById("formSP").value = q.sales_person || "";
     document.getElementById("formValue").value = q.value_amount || "";
-    document.getElementById("formProfit").value = q.profit || "";
+    document.getElementById("formProfit").value = q.profir || "";
     document.getElementById("formGp").value = q.gp_amount || "";
     document.getElementById("formDate").value = q.quotation_date?.split("T")[0] || "";
     document.getElementById("formScope").value = q.scope || "";
